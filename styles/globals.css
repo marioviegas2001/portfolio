@@ -25,27 +25,42 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding-top: 2rem;
     font-family: var(--font-mono);
+    font-size: 22px;
     color: white;
+    margin: 0;
   }
 
   .navbar span:hover {
-    color: #8b8b8b; 
+    color: #8b8b8b;
+    transition: color 0.3s ease;
+    cursor: pointer;
   }
 
-  .left {
-    margin: auto;
-    font-weight: bold;
-  }
-
+  .left,
+  .center,
   .right {
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left,
+  .right {
+    flex: 0.2; 
+  }
+  
+  .center {
+    flex: 1;
   }
 
+  .lets-talk {
+    width: 150px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+  }
   .center span {
     margin: 0 10px;
-    transition: color 0.3s ease;
   }
 
   /* MAIN */
@@ -53,9 +68,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: calc(100vh - 50.4px); /* Set the container height to 100% of the viewport height and take navbar size */
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 1rem;
   }
   
   .hero1 {
