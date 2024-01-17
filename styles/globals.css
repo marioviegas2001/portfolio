@@ -52,16 +52,41 @@ body {
   .hero-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: calc(100vh - 50.4px); /* Set the container height to 100% of the viewport height */
+    justify-content: flex-start;
+    height: calc(100vh - 50.4px); /* Set the container height to 100% of the viewport height and take navbar size */
+    flex-direction: column;
+    margin-top: 50px;
   }
   
-  .hero {
+  .hero1 {
     font-family: var(--font-header);
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 150px;
+    font-size: 130px;
+  }
+
+  .hero2 {
+    font-family: var(--font-header);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 130px;
+    -webkit-text-stroke: 2px white; /* For Safari/Chrome */
+    text-stroke: 2px white; /* For Firefox */
+    color: transparent; /* Make the text transparent to show only the stroke */
+  }
+
+  .hero3 {
+    font-family: var(--font-header);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 130px;
+  }
+
+  .hero-image {
+    margin-top: -330px;
   }
 
 
