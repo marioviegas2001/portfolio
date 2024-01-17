@@ -103,5 +103,28 @@ body {
     margin-top: -330px;
   }
 
+  /* QUOTE */
+  .quote-container {
+    height: 100vh; /* Set the height to full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    color: white;
+  }
+
+  .inspo {
+    font-size: 81px;
+    padding: 4rem;
+    font-weight: bold;
+  }
+
+  .quote {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
 
 }
