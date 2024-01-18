@@ -126,5 +126,64 @@ body {
     font-style: italic;
   }
 
+  /* ABOUT ME  */
+  .about {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--font-mono);
+    color: white;
+    padding-top: 2rem;
+  }
+  
+  .section1-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .section1-container span {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0 1rem;
+  }
+
+  .photo-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .photo {
+    width: 50%;
+    height: auto;
+    border-radius: 2%;
+    /*border: 3px solid white;*/
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-top: 1rem;
+    margin-left: 1rem;
+
+  }
+
+  .who-am-i {
+    display: flex;
+    /* flex: 0.5; */
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .who-am-i span {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .who-am-i p {
+    width: 80%;
+    margin-top: 1rem;
+    font-size: 1.35rem;
+  }
+
 
 }
