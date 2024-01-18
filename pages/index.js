@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Main from '@/components/Main'
 import Quote from '@/components/Quote'
 import About from '@/components/About'
+import Work from '@/components/Work'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function Home() {
       <Main/>
       <Quote/>
       <About/>
+      <Work/>
     </>
   )
 }

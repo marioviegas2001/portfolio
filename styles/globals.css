@@ -185,5 +185,61 @@ body {
     font-size: 1.35rem;
   }
 
+   /* WORK  */
+
+   .work {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--font-mono);
+    color: white;
+    padding-top: 2rem;
+  }
+  
+  .work-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .work-container span {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0 1rem;
+  }
+
+  .work-pic-container {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 5rem;
+  }
+  
+  .work-pic {
+    border-radius: 2%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-top: 1rem;
+  }
+  
+  .work-name {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .work-pic-container.reverse {
+    flex-direction: row-reverse;
+    margin-right: 5rem; /* Adjust margin for the reversed layout */
+    margin-left: 0;
+  }
+  
+  .work-pic-container span {
+    margin-top: 1rem;
+    font-size: 50px;
+    font-weight: bold;
+  }
 
 }
