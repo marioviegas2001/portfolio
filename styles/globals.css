@@ -232,7 +232,7 @@ body {
   
   .work-pic-container.reverse {
     flex-direction: row-reverse;
-    margin-right: 5rem; /* Adjust margin for the reversed layout */
+    margin-right: 5rem;
     margin-left: 0;
   }
   
@@ -240,6 +240,43 @@ body {
     margin-top: 1rem;
     font-size: 50px;
     font-weight: bold;
+  }
+
+   /* SOCIALS  */
+
+
+   .socials {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    color: white;
+    padding-top: 2rem;
+  }
+  
+  .socials-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .socials-container span {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0 1rem;
+
+  }
+
+  .socials-cards {
+    padding-bottom: calc(100vh/4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .socials-cards img{
+    margin: 0 10px;
   }
 
 }
