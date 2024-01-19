@@ -1,6 +1,6 @@
 :root {
   --font-mono: 'Montserrat', sans-serif;
-  --font-header: 'Schnyder M Trial', sans-serif;
+  --font-header: 'Schnyder M Trial';
 }
 
 * {
@@ -13,6 +13,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #0E0E0C;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -277,6 +278,43 @@ body {
 
   .socials-cards img{
     margin: 0 10px;
+  }
+
+  /*CONTACT*/
+
+  .contact {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    background-color: white;
+    color: #0E0E0C;
+    padding-top: 2rem;
+  }
+  
+  .contact-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-container span {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0 1rem;
+
+  }
+
+  .contact-me {
+    font-family: var(--font-header);
+    font-size: 170px;
+    font-weight: bold;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    padding-bottom: calc(100vh/3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 }
