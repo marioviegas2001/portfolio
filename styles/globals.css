@@ -28,40 +28,72 @@ body {
     align-items: center;
     padding-top: 2rem;
     font-family: var(--font-mono);
-    font-size: 22px;
+    font-size: 20px;
     color: white;
-    margin: 0;
   }
-
-  .navbar span:hover {
-    color: #8b8b8b;
-    transition: color 0.3s ease;
-    cursor: pointer;
-  }
-
-  .left,
-  .center,
-  .right {
+  
+  .left, .center, .right {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0.2;
+  }
+
+  .logo {
+    transition: transform 0.3s ease;
+    cursor: pointer;
   }
   
-  .left,
-  .right {
-    flex: 0.2; 
+  .logo:hover {
+    transform: scale(1.1);
   }
   
   .center {
     flex: 1;
+    position: relative;
   }
-
-  .lets-talk {
-    width: 150px; /* Set the desired width */
-    height: auto; /* Maintain aspect ratio */
-  }
+  
   .center span {
     margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .center span::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  
+  .center span:hover::after {
+    width: 100%;
+  }
+  
+  .logo-button, .lets-talk-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    outline: none;
+  }
+  
+  .lets-talk {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .lets-talk:hover {
+    transform: scale(1.1);
   }
 
   /* MAIN */
@@ -85,12 +117,11 @@ body {
     max-width: 100%;
     width: 100%;
     justify-content: center;
-
+    backface-visibility: hidden;
   }
   
   .hero2 {
     -webkit-text-stroke: 2px white; /* For Safari/Chrome */
-    text-stroke: 2px white; /* For Firefox */
     color: transparent; /* Make the text transparent to show only the stroke */
   }
   

@@ -1,31 +1,30 @@
 import Image from 'next/image';
-import React from 'react';
-import Logo from '../public/assets/Logo.png'
-import LetsTalk from '../public/assets/contactButton.png'
-
+import Logo from '../public/assets/Logo.png';
+import LetsTalk from '../public/assets/contactButton.png';
+import { useRouter } from 'next/router';
 
 function Navbar() {
-    return (
-      <div className="navbar">
-        <div className="left">
-          <Image className='logo'
-              src={Logo} 
-              alt="Website logo"
-          /> 
-        </div>
-        <div className="center">
-          <span>About</span>
-          <span>Work</span>
-          <span>Socials</span>
-        </div>
-        <div className="right">
-          <Image className='lets-talk'
-              src={LetsTalk} 
-              alt="Contact Button" 
-          /> 
-        </div>
+  const router = useRouter();
+
+  const handleNavigation = (route) => {
+    router.push(`/${route.toLowerCase()}`);
+  };
+
+  return (
+    <div className="navbar">
+      <div className="left">
+        <Image className='logo' onClick={() => handleNavigation('Main')} src={Logo} alt="Website logo" />
       </div>
-    );
-  }
+      <div className="center">
+        <span onClick={() => handleNavigation('About')}>ABOUT</span>
+        <span onClick={() => handleNavigation('Work')}>WORK</span>
+        <span onClick={() => handleNavigation('Socials')}>SOCIALS</span>
+      </div>
+      <div className="right">
+        <Image className='lets-talk' onClick={() => handleNavigation('Contact')} src={LetsTalk} alt="Contact Button" />
+      </div>
+    </div>
+  );
+}
 
 export default Navbar;
