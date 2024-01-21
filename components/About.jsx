@@ -6,7 +6,7 @@ import aboutPhoto from '../public/assets/aboutPhoto.jpg';
 
 function About() {
   return (
-    <div className='about'>
+    <div id='about' className='about'>
       <div className='section1-container'>
         <Image
           className='section-logo'

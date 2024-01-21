@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 function Contact() {
   return (
-    <div className='contact'>
+    <div id='contact' className='contact'>
         <div className='contact-container'>
             <Image
             className='section-logo'

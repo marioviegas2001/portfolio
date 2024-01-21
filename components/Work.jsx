@@ -16,7 +16,7 @@ function WorkEntry({ name, imageSrc, reverse }) {
 
 function Work() {
   return (
-    <div className='work'>
+    <div id='work' className='work'>
       <div className='work-container'>
         <Image className='section-logo' src={sectionLogo} alt='Section logo' />
         <span>WORK</span>

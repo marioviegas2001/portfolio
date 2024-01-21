@@ -4,7 +4,7 @@ import WebsiteHero from '../public/assets/WebsiteHero.png'
 
 function Main() {
   return (
-    <div className='hero-container'>
+    <div id='main' className='hero-container'>
         <div className="hero1">
             It's me, Mario
         </div>

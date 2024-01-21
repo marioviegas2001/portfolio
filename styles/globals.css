@@ -19,6 +19,7 @@ body {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    scroll-behavior: smooth;
   }
 
   /* NAVBAR */
@@ -51,6 +52,10 @@ body {
   .center {
     flex: 1;
     position: relative;
+  }
+  .center a {
+    text-decoration: none;
+    color: white;
   }
   
   .center span {

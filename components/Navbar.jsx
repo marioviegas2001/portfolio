@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Logo from '../public/assets/Logo.png';
 import LetsTalk from '../public/assets/contactButton.png';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 function Navbar() {
   const router = useRouter();
@@ -13,15 +14,26 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="left">
-        <Image className='logo' onClick={() => handleNavigation('Main')} src={Logo} alt="Website logo" />
+        <Link href='/'>
+          <Image className='logo' src={Logo} alt="Website logo" />
+        </Link>
+        
       </div>
       <div className="center">
-        <span onClick={() => handleNavigation('About')}>ABOUT</span>
-        <span onClick={() => handleNavigation('Work')}>WORK</span>
-        <span onClick={() => handleNavigation('Socials')}>SOCIALS</span>
+          <Link href='/#about'>
+            <span >ABOUT</span>
+          </Link>
+          <Link href='/#work'>
+            <span >WORK</span>
+          </Link>
+          <Link href='/#socials'>
+            <span >SOCIALS</span>
+          </Link>
       </div>
       <div className="right">
-        <Image className='lets-talk' onClick={() => handleNavigation('Contact')} src={LetsTalk} alt="Contact Button" />
+        <Link href='/#contact'>
+          <Image className='lets-talk' src={LetsTalk} alt="Contact Button" />
+        </Link>
       </div>
     </div>
   );

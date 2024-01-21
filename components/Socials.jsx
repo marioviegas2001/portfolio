@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 function Socials() {
   return (
-    <div className='socials'>
+    <div id='socials' className='socials'>
         <div className='socials-container'>
             <Image
             className='section-logo'
