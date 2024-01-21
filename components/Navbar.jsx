@@ -2,17 +2,35 @@ import Image from 'next/image';
 import Logo from '../public/assets/Logo.png';
 import LetsTalk from '../public/assets/contactButton.png';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 function Navbar() {
   const router = useRouter();
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    // Add event listener for scroll
+    window.addEventListener('scroll', handleScroll);
+
+    // Remove the event listener when component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleNavigation = (route) => {
     router.push(`/${route.toLowerCase()}`);
   };
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="left">
         <Link href='/'>
           <Image className='logo' src={Logo} alt="Website logo" />
