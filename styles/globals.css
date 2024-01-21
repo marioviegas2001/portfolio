@@ -141,6 +141,8 @@ body {
   
   .hero-image {
     position: absolute;
+    display: flex;
+    justify-content: center;
     bottom: 0;
     z-index: 1;
   }
