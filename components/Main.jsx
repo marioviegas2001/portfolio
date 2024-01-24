@@ -8,6 +8,8 @@ import SplitType from 'split-type'
 function Main() {
   const heroImageRef = useRef(null);
 
+
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX: mouseX, clientY: mouseY } = e;
