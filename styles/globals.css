@@ -71,6 +71,7 @@ body {
     margin: 0 10px;
     cursor: pointer;
     position: relative;
+    opacity: 1;
   }
   
   .center span::after {

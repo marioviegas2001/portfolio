@@ -4,9 +4,11 @@ import LetsTalk from '../public/assets/contactButton.png';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import gsap from 'gsap';
+
 
 function Navbar() {
-  const router = useRouter();
+  //const router = useRouter();
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -25,9 +27,19 @@ function Navbar() {
     };
   }, []);
 
-  const handleNavigation = (route) => {
+  useEffect(() => {
+    // GSAP Animation
+    var tl = gsap.timeline();
+    tl.fromTo('.logo', {opacity: 0}, {duration: 4, opacity: 1})
+    .fromTo('.center span', {opacity: 0}, {duration: 4, opacity: 1}, "<")
+    .fromTo('.lets-talk', {opacity: 0}, {duration: 4, opacity: 1}, "<")
+  }, []);
+
+  /* const handleNavigation = (route) => {
     router.push(`/${route.toLowerCase()}`);
-  };
+  }; */
+
+  
 
   return (
     <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
