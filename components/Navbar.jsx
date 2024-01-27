@@ -1,30 +1,28 @@
 import Image from 'next/image';
 import Logo from '../public/assets/Logo.png';
 import LetsTalk from '../public/assets/contactButton.png';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
+import Lenis from '@studio-freight/lenis'
 
 
 function Navbar() {
-  //const router = useRouter();
 
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
-      setScrolled(isScrolled);
-    };
+    const lenis = new Lenis()
 
-    // Add event listener for scroll
-    window.addEventListener('scroll', handleScroll);
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    })
 
-    // Remove the event listener when component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
   }, []);
 
   useEffect(() => {
@@ -39,14 +37,9 @@ function Navbar() {
     };
   }, []);
 
-  /* const handleNavigation = (route) => {
-    router.push(`/${route.toLowerCase()}`);
-  }; */
-
-  
 
   return (
-    <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <div className='navbar'>
       <div className="left">
         <Link href='/'>
           <Image className='logo' src={Logo} alt="Website logo" />

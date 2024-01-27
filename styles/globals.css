@@ -19,7 +19,6 @@ body {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-    scroll-behavior: smooth;
   }
 
   #about, #work, #socials, #contact{
@@ -40,10 +39,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-  }
-
-  .navbar.scrolled {
-    background-color: rgba(14, 14, 12, 1);
+    background-color: #0e0e0c;
   }
   
   .left, .center, .right {
