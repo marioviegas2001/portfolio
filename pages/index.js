@@ -8,6 +8,7 @@ import Work from '@/components/Work'
 import Socials from '@/components/Socials'
 import Contact from '@/components/Contact'
 
+
 export default function Home() {
   return (
     <div className='parent-container'>
