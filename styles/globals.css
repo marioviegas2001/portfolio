@@ -155,7 +155,7 @@ body {
 
   /* QUOTE */
   .quote-container {
-    height: 200vh; /* Set the height to 2x viewport height */
+    height: 150vh; /* Set the height to 2x viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -33,6 +33,10 @@ function Navbar() {
     tl.fromTo('.logo', {opacity: 0}, {duration: 4, opacity: 1})
     .fromTo('.center span', {opacity: 0}, {duration: 4, opacity: 1}, "<")
     .fromTo('.lets-talk', {opacity: 0}, {duration: 4, opacity: 1}, "<")
+
+    return () => {
+      tl.kill(); // Cancel all animations
+    };
   }, []);
 
   /* const handleNavigation = (route) => {
