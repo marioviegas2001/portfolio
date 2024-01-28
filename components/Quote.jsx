@@ -8,19 +8,32 @@ function Quote() {
     // Check if window object is available (client-side)
     if (typeof window !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
-      const ourText = new SplitType('.inspo', { types: 'chars' });
-      const chars = ourText.chars;
+      const inspoText = new SplitType('.inspo', { types: 'chars' });
+      const chars = inspoText.chars;
+      const quoteText = new SplitType('.quote', { types: 'chars' });
+      const charsQuote = quoteText.chars;
 
-      gsap.from(chars, {
+      var tl = gsap.timeline();
+
+      tl.from(chars, {
         scrollTrigger: {
           trigger: '.inspo',
           start: 'top center',
           end: 'bottom center',
           scrub: true,
-          markers: true
+          markers: false
         },
         opacity: 0.2,
         stagger: 0.1
+      }).from(charsQuote, {
+        scrollTrigger: {
+          trigger: '.quote',
+          start: 'top center',
+          end: "bottom center",
+          scrub: true,
+          markers: false
+        },
+        opacity: 0,
       });
     }
   }, []);
