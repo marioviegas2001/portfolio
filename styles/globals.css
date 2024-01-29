@@ -1,5 +1,5 @@
 :root {
-  --font-mono: 'Montserrat', sans-serif;
+  --font-mono: "GeneralSans-Variable";
   --font-header: 'Schnyder M Trial';
 }
 
@@ -151,7 +151,7 @@ body {
 
   /* QUOTE */
   .quote-container {
-    height: 150vh; /* Set the height to 2x viewport height */
+    height: 200vh; /* Set the height to 2x viewport height */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,10 +160,15 @@ body {
     color: white;
   }
 
+  .inspo-wrapper {
+    max-width: 100%; /* Adjust this value as needed */
+  }
+
   .inspo {
-    font-size: 81px;
+    font-size: 150px;
     padding: 4rem;
     font-weight: bold;
+    text-align: center;
   }
 
   .quote {

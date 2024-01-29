@@ -8,14 +8,14 @@ function Quote() {
     // Check if window object is available (client-side)
     if (typeof window !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
-      const inspoText = new SplitType('.inspo', { types: 'chars' });
-      const chars = inspoText.chars;
+      const inspoText = new SplitType('.inspo', { types: 'words' });
+      const words = inspoText.words;
       const quoteText = new SplitType('.quote', { types: 'chars' });
       const charsQuote = quoteText.chars;
 
       var tl = gsap.timeline();
 
-      tl.from(chars, {
+      tl.from(words, {
         scrollTrigger: {
           trigger: '.inspo',
           start: 'top center',
