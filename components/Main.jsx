@@ -68,24 +68,31 @@ function Main() {
 
 
   useEffect(() => {
-    const heroImage = heroImageRef.current;
-    const heroTexts = document.querySelectorAll('.hero1, .hero2, .hero3');
-
     if (typeof window !== 'undefined') {
-      ScrollTrigger.refresh();
-      const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: heroImage,
-        start: 'top center', // Adjust this according to your needs
-        end: 'bottom center', // Adjust this according to your needs
-        scrub: true,
-        markers: false,
-        toggleActions: 'play none none reverse',
-      },
-    });
-
-    tl.to(heroImage, { opacity: 0});
-    tl.to(heroTexts, { opacity: 0 }, "<");
+      const heroImage = heroImageRef.current;
+      const heroTexts = document.querySelectorAll('.hero1, .hero2, .hero3');
+      var tl = gsap.timeline();
+      
+      tl.to('.hero-image-img', {
+        scrollTrigger: {
+          trigger: heroImage,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: true,
+          markers: false,
+        },
+        opacity: 0,
+        y: -100
+      }).to(heroTexts, {
+        scrollTrigger: {
+          trigger: heroImage,
+          start: 'top center',
+          end: "bottom center",
+          scrub: true,
+          markers: false
+        },
+        opacity: 0,
+      }, '<');
     }
     
 
@@ -98,6 +105,7 @@ function Main() {
       <div className="hero3"><p>It's me, Mario</p></div>
       <div className="hero-image" ref={heroImageRef}>
         <Image
+          className="hero-image-img" //classname added for opacity animation (cant animate at parent level)
           src={WebsiteHero}
           alt="Website Hero Pic"
           style={{
