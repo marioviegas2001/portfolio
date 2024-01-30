@@ -189,15 +189,12 @@ body {
     padding-top: 2rem;
   }
   
-  .section1-container {
-    display: flex;
-    align-items: center;
-  }
   
-  .section1-container span {
-    font-size: 64px;
+  .section1-container {
+    font-family: var(--font-header);
+    font-size: 100px;
     font-weight: bold;
-    margin: 0 1rem;
+    margin-bottom: -20px;
   }
 
   .photo-container {
@@ -212,6 +209,7 @@ body {
     height: auto;
     border-radius: 2%;
     /*border: 3px solid white;*/
+    opacity: 0;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     margin-top: 1rem;
     margin-left: 1rem;

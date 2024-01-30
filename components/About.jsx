@@ -1,26 +1,62 @@
 import Image from 'next/image';
-import React from 'react';
-import sectionLogo from '../public/assets/sectionLogo.png';
-import aboutPhoto from '../public/assets/aboutPhoto.jpg';
+import React, { useEffect } from 'react';
+import gsap from "gsap/dist/gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitType from 'split-type';
+import aboutPhoto from '../public/assets/aboutPhoto.png';
 
 
 function About() {
+  useEffect(() => {
+    // Check if window object is available (client-side)
+    if (typeof window !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      const aboutme = new SplitType('.section1-container', { types: 'chars' });
+      const aboutmeChars = aboutme.chars;
+      const text = new SplitType('.who-am-i', { types: 'chars' });
+      const textChars = text.chars;
+
+      var tl = gsap.timeline();
+
+  
+      tl.from(aboutmeChars, {
+        scrollTrigger: {
+          trigger: '.section1-container',
+          start: 'top center',
+          end: 'bottom center',
+          scrub: true,
+          markers: false
+        },
+        opacity: 0,
+        y: 50
+      }).from(textChars, {
+        scrollTrigger: {
+          trigger: '.who-am-i',
+          start: 'top center',
+          end: 'center center',
+          scrub: true,
+          markers: false
+        },
+        opacity: 0,
+      }).to('.photo', {
+        scrollTrigger: {
+          trigger: '.photo',
+          start: 'top center',
+          end: 'center bottom',
+          scrub: true,
+          markers: false //to method used instead of a from because some conflict with css would't make from method work
+        },
+        opacity: 1,
+      });
+    }
+  }, []);
+
   return (
     <div id='about' className='about'>
       <div className='section1-container'>
-        <Image
-          className='section-logo'
-          src={sectionLogo}
-          alt='Section logo'
-        />
-        <span>ABOUT ME</span>
-        <Image
-          className='section-logo'
-          src={sectionLogo}
-          alt='Section logo'
-        />
+        ABOUT ME
       </div>
-      <div className='photo-container'>
+      <div className='photo-container' >
         <Image
             className='photo'
             src={aboutPhoto}
