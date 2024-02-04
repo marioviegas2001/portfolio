@@ -13,8 +13,8 @@ function About() {
       gsap.registerPlugin(ScrollTrigger);
       const aboutme = new SplitType('.section1-container', { types: 'chars' });
       const aboutmeChars = aboutme.chars;
-      const text = new SplitType('.who-am-i', { types: 'chars' });
-      const textChars = text.chars;
+      const text = new SplitType('.who-am-i', { types: 'words' });
+      const textWords = text.words;
 
       var tl = gsap.timeline();
 
@@ -29,7 +29,7 @@ function About() {
         },
         opacity: 0,
         y: 50
-      }).from(textChars, {
+      }).from(textWords, {
         scrollTrigger: {
           trigger: '.who-am-i',
           start: 'top center',
