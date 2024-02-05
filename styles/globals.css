@@ -294,16 +294,16 @@ body {
     font-weight: bold;
   }
 
-   /* SOCIALS  */
+   /* SKILLS  */
 
 
    .socials {
-    height: 100vh;
+    height: 200vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    font-family: var(--font-mono);
+    font-family: var(--font-header);
     color: white;
     padding-top: 2rem;
   }
@@ -314,7 +314,7 @@ body {
   }
   
   .socials-container span {
-    font-size: 64px;
+    font-size: 100px;
     font-weight: bold;
     margin: 0 1rem;
 
@@ -325,6 +325,39 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .custom-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid white; /* Set the border color and width */
+    border-radius: 70px;
+    overflow: hidden;
+    position: relative;
+    width: 300px; /* Adjust the width according to your design */
+    height: 300px; /* Adjust the height according to your design */
+    background-color: transparent; /* Set the background color to transparent */
+  }
+
+  .python {
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+  }
+  
+  .custom-box:hover .python {
+    transform: translateY(-30px) scale(0.8); /* Adjust the values for your desired effect */
+  }
+
+  .python-text {
+    font-family: var(--font-mono);
+    font-size: 50px;
+    position: absolute;
+    bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .custom-box:hover .python-text {
+    opacity: 1;
   }
 
   .socials-cards img{

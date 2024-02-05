@@ -43,7 +43,7 @@ function Work() {
           start: 'top center',
           end: 'center center',
           scrub: true,
-          markers: true
+          markers: false
         },
         opacity: 1,
       });

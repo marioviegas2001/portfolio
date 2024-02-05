@@ -54,7 +54,7 @@ function Navbar() {
             <span >WORK</span>
           </Link>
           <Link href='/#socials'>
-            <span >SOCIALS</span>
+            <span >SKILLS</span>
           </Link>
       </div>
       <div className="right">
