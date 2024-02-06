@@ -301,7 +301,7 @@ body {
     height: 200vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;;
     align-items: center;
     font-family: var(--font-header);
     color: white;
@@ -325,29 +325,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   .custom-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 6px solid white; /* Set the border color and width */
+    border: 6px solid white;
     border-radius: 70px;
-    overflow: hidden;
     position: relative;
-    width: 300px; /* Adjust the width according to your design */
-    height: 300px; /* Adjust the height according to your design */
-    background-color: transparent; /* Set the background color to transparent */
+    width: 300px; 
+    height: 300px;
   }
 
-  .python {
+  .card {
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
   }
   
-  .custom-box:hover .python {
-    transform: translateY(-30px) scale(0.8); /* Adjust the values for your desired effect */
+  .custom-box:hover .card {
+    transform: translateY(-30px) scale(0.8); 
   }
 
-  .python-text {
+  .text {
     font-family: var(--font-mono);
     font-size: 50px;
     position: absolute;
@@ -356,7 +356,7 @@ body {
     transition: opacity 0.3s ease;
   }
   
-  .custom-box:hover .python-text {
+  .custom-box:hover .text {
     opacity: 1;
   }
 
