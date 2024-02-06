@@ -370,35 +370,44 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    font-family: var(--font-mono);
-    background-color: white;
-    color: #0E0E0C;
-    padding-top: 2rem;
+    background-color: #0E0E0C;
+    color: white;
+    padding-bottom: 20vh;
+    width: 100%;
   }
   
-  .contact-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .contact-container span {
-    font-size: 64px;
-    font-weight: bold;
-    margin: 0 1rem;
-
-  }
-
   .contact-me {
     font-family: var(--font-header);
-    font-size: 170px;
+    font-size: 200px;
     font-weight: bold;
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    padding-bottom: calc(100vh/3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-shadow: 5px 5px 5px #7a7a7a;
+    text-align: center;
+    position: relative; /* Ensure the relative positioning for pseudo-element */
   }
+  .contact-me span{
+    cursor: pointer;
+  }
+  
+  .contact-me:before {
+    content: ''; /* Add content to the pseudo-element */
+    position: absolute; /* Position the pseudo-element */
+    bottom: 2rem; /* Adjust the distance from the text */
+    left: 0; /* Align the pseudo-element to the left of the text */
+    height: 0.3rem; /* Set the height of the underline */
+    width: 100%; /* Set the width of the underline to match the text width */
+    transform-origin: center; /* Set the transform origin */
+    transform: scaleX(0); /* Initially hide the underline */
+    background-color: rgb(255, 255, 255); /* Set the background color of the underline */
+    transition: transform 0.7s cubic-bezier(.65,0,.35,1); /* Apply transition effect */
+  }
+  
+  .contact-me:hover:before {
+    transform: scaleX(1); /* Expand the underline on hover */
+  }
+  
+  
+  
 
 }

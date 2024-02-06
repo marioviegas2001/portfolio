@@ -7,26 +7,8 @@ import Image from 'next/image';
 function Contact() {
   return (
     <div id='contact' className='contact'>
-        <div className='contact-container'>
-            <Image
-            className='section-logo'
-            src={sectionLogo}
-            alt='Section logo'
-            />
-            <span>CONTACT</span>
-            <Image
-            className='section-logo'
-            src={sectionLogo}
-            alt='Section logo'
-            />
-        </div>
         <div className='contact-me'>
-            <span>LET'S TALK.</span>
-            <Image
-            className='contact-me-btn'
-            src={contactMeBtn}
-            alt='Contact Me Button'
-            />
+            <span>GET IN TOUCH.</span>
         </div>
     </div>
   )
