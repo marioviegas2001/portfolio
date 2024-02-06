@@ -16,6 +16,26 @@ body {
   background-color: #0e0e0c;
 }
 
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -374,7 +394,6 @@ body {
     align-items: center;
     background-color: #0E0E0C;
     color: white;
-    padding-bottom: 20vh;
     width: 100%;
   }
   
@@ -404,10 +423,188 @@ body {
   }
   
   .contact-me:hover:before {
-    transform: scaleX(1); /* Expand the underline on hover */
+    transform: scaleX(1); 
+  }
+  /* FOOTER */
+  .footer {
+    color: white;
+    padding: 2rem;
+    font-family: var(--font-mono);
   }
   
+  .footer-container1 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem; /* Example gap */
+  }
   
+  .footer-container1 .navigationdiv,
+  .footer-container1 .socialsdiv {
+    display: flex;
+    flex-direction: column;
+  }
   
+  .footer-container1 .navigation-links,
+  .footer-container1 .socials-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Example gap between links */
+  }
+
+  .navigation-links a,
+  .socials-links a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .navigationText,
+  .socialsText {
+    font-family: var(--font-header);
+    display: flex;
+    border-bottom: 1.5px solid #ffffff; /* Example border color */
+    padding-bottom: 0.25rem; /* Example padding */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff; /* Example text color */
+    margin-bottom: 2rem; /* Example margin bottom */
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .footer-container1 {
+      gap: 3rem; /* Adjust gap for larger screens */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .footer-container1 {
+      grid-template-columns: repeat(12, minmax(0, 1fr)); /* 12 columns layout */
+      gap: 3rem; /* Adjust gap for larger screens */
+    }
+  
+    .footer-container1 .navigationdiv,
+    .footer-container1 .socialsdiv {
+      grid-column: span 6; /* Each section spans 6 columns on larger screens */
+    }
+  }
+
+  .footer-container2 {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 3rem; /* Example gap between grid items */
+    margin-top: 2.5rem; /* Example margin top */
+    align-items: flex-end; /* Align items to the bottom */
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 640px) {
+    .footer-container2 {
+      grid-template-columns: repeat(12, minmax(0, 1fr)); /* 12 columns layout on small screens */
+      gap: 2rem; /* Adjust gap for larger screens */
+    }
+  
+    .footer-container2 .copyright,
+    .footer-container2 .time,
+    .footer-container2 .go-top {
+      grid-column: span 4; /* Each item spans 4 columns on small screens */
+    }
+  }
+
+.copyright span {
+  font-weight: bold;
+  line-height: 85%; /* Adjust leading */
+  font-size: 4rem; /* Adjust font size */
+  color: #ffffff; /* Example text color */
+  font-family: var(--font-header);
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .copyright span {
+    font-size: 2rem; /* Adjust font size for larger screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .copyright span {
+    font-size: 2.5rem; /* Adjust font size for larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .copyright span {
+    font-size: 3rem; /* Adjust font size for larger screens */
+  }
+}
+
+@media (min-width: 1280px) {
+  .copyright span {
+    font-size: 5rem; /* Adjust font size for larger screens */
+  }
+}
+
+@media (min-width: 1536px) {
+  .copyright span {
+    font-size: 6rem; /* Adjust font size for extra large screens */
+  }
+}
+
+.time {
+  margin-bottom: 0.75rem; /* Adjust the margin bottom */
+  display: flex; /* Enable flexbox layout */
+  flex-direction: column; /* Arrange child elements in a column */
+  align-items: center;
+}
+
+.local{
+  font-family: var(--font-header);
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.time-counter{
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .time {
+    grid-column: span 3; /* Each item spans 3 columns on small screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .time {
+    grid-column: span 4; /* Each item spans 4 columns on medium screens */
+    margin-bottom: 0; /* Remove margin bottom on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .time {
+    grid-column: span 3; /* Each item spans 3 columns on large screens */
+  }
+}
+
+.go-top {
+  width: 100%; /* Make the div full width */
+  display: flex; /* Enable flexbox layout */
+  justify-content: flex-end; /* Align items to the end of the container */
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .go-top {
+    grid-column: span 3; /* Each item spans 3 columns on small screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .go-top {
+    grid-column: span 3; /* Each item spans 3 columns on large screens */
+  }
+}
 
 }
