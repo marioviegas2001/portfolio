@@ -61,9 +61,9 @@ function Footer() {
             <div className='copyright'>
                 <span>&copy; 2024 <br /> Mario Viegas</span>
             </div>
-            <div className='time' suppressHydrationWarning>
+            <div className='time'>
                 <span className='local'>Local Time</span>
-                <span className='time-counter' >{time}</span>
+                <span className='time-counter' suppressHydrationWarning>{time}</span>
             </div>
             <div className='go-top'>
                 <button onClick={toTop}>TOP</button>
