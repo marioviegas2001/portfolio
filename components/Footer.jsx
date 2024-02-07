@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import { Icon } from "@iconify/react";
 
 function Footer() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -45,14 +46,14 @@ function Footer() {
             <div className='socialsdiv'>
                 <span className='socialsText'>Socials</span>
                 <div className='socials-links'>
-                    <Link href='/'>
-                        <span >HOME</span>
+                    <Link href='https://github.com/marioviegas2001'>
+                        <Icon className='icon' icon="mdi:github" color="#FFF" />
                     </Link>
-                    <Link href='/#about'>
-                        <span >ABOUT</span>
+                    <Link href='https://linkedin.com/in/marioviegasdev'>
+                        <Icon className='icon' icon="mdi:linkedin" color="#FFF" />
                     </Link>
-                    <Link href='/#work'>
-                        <span >WORK</span>
+                    <Link href='https://www.instagram.com/marioviegas984/'>
+                        <Icon className='icon' icon="mdi:instagram" color="#FFF" />
                     </Link>
                 </div>
             </div>
@@ -66,7 +67,9 @@ function Footer() {
                 <span className='time-counter' suppressHydrationWarning>{time}</span>
             </div>
             <div className='go-top'>
-                <button onClick={toTop}>TOP</button>
+                <button className='button-go-top' onClick={toTop}> 
+                    <Icon className='icon' icon="mingcute:arrow-up-fill" />
+                </button>
             </div>
         </div>
     </footer>
