@@ -1,15 +1,12 @@
 import Image from 'next/image';
 import Logo from '../public/assets/Logo.png';
 import LetsTalk from '../public/assets/contactButton.png';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { useEffect } from 'react';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import gsap from 'gsap';
 import Lenis from '@studio-freight/lenis'
 
-
 function Navbar() {
-
-
   useEffect(() => {
     const lenis = new Lenis()
 
@@ -37,30 +34,28 @@ function Navbar() {
     };
   }, []);
 
-
   return (
     <div className='navbar'>
       <div className="left">
-        <Link href='/'>
+        <ScrollLink to='main' smooth>
           <Image className='logo' src={Logo} alt="Website logo" />
-        </Link>
-        
+        </ScrollLink>
       </div>
       <div className="center">
-          <Link href='/#about'>
-            <span >ABOUT</span>
-          </Link>
-          <Link href='/#work'>
-            <span >WORK</span>
-          </Link>
-          <Link href='/#socials'>
-            <span >SKILLS</span>
-          </Link>
+        <ScrollLink to='about' smooth>
+          <span>ABOUT</span>
+        </ScrollLink>
+        <ScrollLink to='work' smooth>
+          <span>WORK</span>
+        </ScrollLink>
+        <ScrollLink to='socials' smooth>
+          <span>SKILLS</span>
+        </ScrollLink>
       </div>
       <div className="right">
-        <Link href='/#contact'>
+        <ScrollLink to='contact' smooth>
           <Image className='lets-talk' src={LetsTalk} alt="Contact Button" />
-        </Link>
+        </ScrollLink>
       </div>
     </div>
   );
