@@ -10,8 +10,8 @@ function Footer() {
 
   function getFormattedTime() {
     const date = new Date();
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
+    const hours = date.getHours().toString().padStart(2, '0');;
+    const minutes = date.getMinutes().toString().padStart(2, '0');;
     const gmt = -date.getTimezoneOffset() / 60;
     return `${hours}:${minutes} | GMT ${gmt >= 0 ? '+' : '-'}${Math.abs(gmt)}`;
   }
@@ -31,7 +31,7 @@ function Footer() {
                     <Link href='/' >
                         <span >HOME</span>
                     </Link>
-                    <Link href='/#about' onclick="lenis.scrollTo('#about')">
+                    <Link href='/#about'>
                         <span >ABOUT</span>
                     </Link>
                     <Link href='/#work'>
@@ -61,9 +61,9 @@ function Footer() {
             <div className='copyright'>
                 <span>&copy; 2024 <br /> Mario Viegas</span>
             </div>
-            <div className='time'>
+            <div className='time' suppressHydrationWarning>
                 <span className='local'>Local Time</span>
-                <span className='time-counter'>{time}</span>
+                <span className='time-counter' >{time}</span>
             </div>
             <div className='go-top'>
                 <button onClick={toTop}>TOP</button>
