@@ -134,6 +134,52 @@ html.lenis {
     transform: scale(1.1);
   }
 
+  /* Media queries for responsiveness */
+  @media (max-width: 767px) {
+    .navbar {
+      font-size: 15px;
+    }
+
+    .logo {
+      width: 40px;
+      height: auto;
+    }
+
+    .lets-talk {
+      width: 100px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+      font-size: 18px;
+    }
+
+    .logo {
+      width: 45px;
+      height: auto;
+    }
+
+    .lets-talk {
+      width: 120px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .navbar {
+      font-size: 22px;
+    }
+    .logo {
+      width: 55px;
+      height: auto;
+    }
+
+    .lets-talk {
+      width: 150px;
+    }
+
+  }
+
   /* MAIN */
   .hero-container {
     display: flex;
@@ -142,7 +188,6 @@ html.lenis {
     flex-direction: column;
     margin-top: 100px;
     min-height: 100vh;
-    position: relative;
   }
   
   .hero1, .hero2, .hero3 {
@@ -150,7 +195,7 @@ html.lenis {
     font-family: var(--font-header);
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 15px;
     font-size: 10.5vw;
     max-width: 100%;
     width: 100%;
@@ -167,9 +212,38 @@ html.lenis {
     position: absolute;
     display: flex;
     justify-content: center;
-    bottom: 0;
     z-index: 1;
+    top: 40%;
   }
+
+    /* Media queries for responsiveness */
+    @media (max-width: 767px) {
+      .hero-container {
+        margin-top: -100px;
+        justify-content: center;
+      }
+
+      .hero1, .hero2, .hero3 {
+        letter-spacing: 8px;
+        font-size: 8vw;
+      }
+
+      .hero-image-img {
+        width: 25rem !important;
+      }
+    }
+  
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .hero-container {
+        margin-top: -100px;
+        justify-content: center;
+      }
+
+      .hero1, .hero2, .hero3 {
+        letter-spacing: 10px;
+        font-size: 10vw;
+      }
+    }
   
 
   /* QUOTE */

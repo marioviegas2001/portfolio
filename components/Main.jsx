@@ -76,7 +76,7 @@ function Main() {
       tl.to('.hero-image-img', {
         scrollTrigger: {
           trigger: heroImage,
-          start: 'top center',
+          start: 'center center',
           end: 'bottom center',
           scrub: true,
           markers: false,
@@ -86,7 +86,7 @@ function Main() {
       }).to(heroTexts, {
         scrollTrigger: {
           trigger: heroImage,
-          start: 'top center',
+          start: 'center center',
           end: "bottom center",
           scrub: true,
           markers: false
