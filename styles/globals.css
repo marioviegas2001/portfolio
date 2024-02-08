@@ -1,5 +1,5 @@
 :root {
-  --font-mono: "GeneralSans-Variable";
+  --font-mono: "Helvetica";
   --font-header: 'Schnyder M Trial';
 }
 
@@ -460,6 +460,37 @@ html.lenis {
     color: white;
   }
 
+  .socials-links .icon{
+    transition: transform 0.3s ease;
+  }
+  
+  .socials-links .icon:hover {
+    transform: scale(1.5);
+  }
+
+  .navigation-links span {
+    cursor: pointer;
+    position: relative;
+    opacity: 1;
+  }
+  
+  .navigation-links span::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  
+  .navigation-links span:hover::after {
+    width: 100%;
+  }
+
   .navigationText,
   .socialsText {
     font-family: var(--font-header);
@@ -651,7 +682,7 @@ html.lenis {
 }
 
 .button-go-top:hover .icon {
-  color: black;
+  color: #0e0e0c;
   transition: 0.3s ease-in-out;
 }
 
