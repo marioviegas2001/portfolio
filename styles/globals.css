@@ -355,7 +355,7 @@ html.lenis {
     .section1-container {
       font-size: 50px;
     }
-    
+
     .photo-container {
       align-items: center;
       flex-direction: column;
@@ -504,7 +504,6 @@ html.lenis {
     font-size: 100px;
     font-weight: bold;
     margin: 0 1rem;
-
   }
 
   .socials-cards {
@@ -549,6 +548,78 @@ html.lenis {
 
   .socials-cards img{
     margin: 0 10px;
+  }
+
+  @media (max-width: 399px) {
+    .socials-container span {
+      font-size: 50px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+
+    .socials-cards img{
+      scale: 0.2;
+    }
+
+    .custom-box {
+      width: 100px; 
+      height: 100px;
+    }
+  }
+
+  @media (min-width: 400px) and (max-width: 767px) {
+    .socials-container span {
+      font-size: 50px;
+    }
+
+    .text {
+      font-size: 30px;
+    }
+
+    .socials-cards img{
+      scale: 0.4;
+    }
+
+    .custom-box {
+      width: 150px; 
+      height: 150px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .socials-container span {
+      font-size: 80px;
+    }
+
+    .text {
+      font-size: 35px;
+    }
+
+    .socials-cards img{
+      scale: 0.6;
+    }
+
+    .custom-box {
+      width: 200px; 
+      height: 200px;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1299px) {
+    .text {
+      font-size: 40px;
+    }
+
+    .socials-cards img{
+      scale: 0.8;
+    }
+
+    .custom-box {
+      width: 250px; 
+      height: 250px;
+    }
   }
 
   /*CONTACT*/
