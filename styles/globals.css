@@ -663,6 +663,25 @@ html.lenis {
   .contact-me:hover:before {
     transform: scaleX(1); 
   }
+  
+  @media (min-width: 400px) and (max-width: 767px) {
+    .contact-me {
+      font-size: 100px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .contact-me {
+      font-size: 100px;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1400px) {
+    .contact-me {
+      font-size: 140px;
+    }
+  }
+
   /* FOOTER */
   .footer {
     color: white;
