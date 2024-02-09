@@ -664,7 +664,7 @@ html.lenis {
     transform: scaleX(1); 
   }
   
-  @media (min-width: 400px) and (max-width: 767px) {
+  @media (max-width: 767px) {
     .contact-me {
       font-size: 100px;
     }
@@ -801,44 +801,43 @@ html.lenis {
 .copyright span {
   font-weight: bold;
   line-height: 85%; /* Adjust leading */
-  font-size: 4rem; /* Adjust font size */
+  font-size: 6rem; /* Adjust font size */
   color: #ffffff; /* Example text color */
   font-family: var(--font-header);
 }
 
 /* Responsive styles */
-@media (min-width: 640px) {
+@media (max-width: 767px) {
   .copyright span {
-    font-size: 2rem; /* Adjust font size for larger screens */
+    font-size: 2rem;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1149px) {
   .copyright span {
-    font-size: 2.5rem; /* Adjust font size for larger screens */
+    font-size: 2.5rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1150px) and (max-width: 1399px) {
   .copyright span {
-    font-size: 3rem; /* Adjust font size for larger screens */
+    font-size: 4rem;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1400px) and (max-width: 1700px) {
   .copyright span {
-    font-size: 5rem; /* Adjust font size for larger screens */
-  }
-}
-
-@media (min-width: 1536px) {
-  .copyright span {
-    font-size: 6rem; /* Adjust font size for extra large screens */
+    font-size: 5rem;
   }
 }
 
 .time {
-  margin-bottom: 0.75rem; /* Adjust the margin bottom */
   display: flex; /* Enable flexbox layout */
   flex-direction: column; /* Arrange child elements in a column */
   align-items: center;
@@ -855,6 +854,31 @@ html.lenis {
 .time-counter{
   font-family: var(--font-header);
   font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .time {
+    margin-left: 0;
+    align-items: center;
+  }
+
+  .local{
+    font-size: 1rem;
+  }
+  
+  .time-counter{
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1149px) {
+  .local{
+    font-size: 1.4rem;
+  }
+  
+  .time-counter{
+    font-size: 1rem;
+  }
 }
 
 /* Responsive styles */
@@ -917,6 +941,20 @@ html.lenis {
 .button-go-top .icon {
   color: white; /* Set icon color */
   font-size: 2.5rem;
+}
+
+@media (max-width: 767px) {
+  .go-top {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-go-top {
+    padding: 5px; /* Adjust as needed */
+  }
+  .button-go-top .icon {
+    font-size: 1.5rem;
+  }
 }
 
 .button-go-top::after {
