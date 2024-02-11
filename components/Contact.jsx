@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Footer from './Footer'
 import gsap from "gsap/dist/gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Link from 'next/link';
 
 function Contact() {
   useEffect(() => {
@@ -30,7 +31,9 @@ function Contact() {
   return (
     <div id='contact' className='contact'>
         <div className='contact-me'>
-            <span>GET IN TOUCH.</span>
+            <Link href="/ContactForm">
+              <span>GET IN TOUCH.</span>
+            </Link>
         </div>
       <Footer/>
     </div>
