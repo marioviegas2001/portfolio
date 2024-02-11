@@ -7,6 +7,7 @@ import About from '@/components/About'
 import Work from '@/components/Work'
 import Socials from '@/components/Socials'
 import Contact from '@/components/Contact'
+import CustomCursor from '@/components/CustomCursor'
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/Logo.png" />
       </Head>
+      <CustomCursor />
       <Navbar/>
       <section className='section1'><Main/></section>
       <section className='section2'><Quote/></section>

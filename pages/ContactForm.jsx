@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import gsap from "gsap/dist/gsap";
 import Link from 'next/link';
 import Head from 'next/head';
+import CustomCursor from '@/components/CustomCursor';
 
 function ContactForm() {
   const form = useRef();
@@ -120,6 +121,7 @@ function ContactForm() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/Logo.png" />
       </Head>
+      <CustomCursor />
       <div className="contact-form-container">
         
             <div className="contact-form-info-icon backbtn">
