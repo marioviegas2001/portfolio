@@ -6,14 +6,10 @@ const CustomCursor = () => {
     const cursor = document.querySelector('.cursor');
 
     if (!cursor) return; // Check if cursor exists before proceeding
-    let timer; // Variable to store the timeout
     const animateCursor = (e) => {
-        clearTimeout(timer); // Clear any existing timeout
-        timer = setTimeout(() => { // Set a new timeout
           const { clientX: x, clientY: y } = e;
           cursor.style.left = x + 'px';
           cursor.style.top = y + 'px';
-        }, 10);
     };
 
     const scaleCursor = () => {

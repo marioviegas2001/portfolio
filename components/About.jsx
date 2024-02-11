@@ -22,13 +22,16 @@ function About() {
       tl.from(aboutmeChars, {
         scrollTrigger: {
           trigger: '.section1-container',
-          start: 'top center',
+          start: '-200px center',
           end: 'bottom center',
           scrub: true,
-          markers: false
+          markers: false,
+          toggleActions: "play none none none"
         },
         opacity: 0,
-        y: 50
+        y: 50,
+        duration: 1,
+        ease: 'power3.out',
       }).from(textWords, {
         scrollTrigger: {
           trigger: '.who-am-i',

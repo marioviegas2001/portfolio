@@ -31,16 +31,16 @@ function Footer() {
         <div className='navigationdiv'>
           <span className='navigationText'>Navigation</span>
           <div className='navigation-links'>
-            <ScrollLink to='main' smooth>
+            <ScrollLink to='main' smooth offset={-100}>
               <span>HOME</span>
             </ScrollLink>
-            <ScrollLink to='about' smooth>
+            <ScrollLink to='about' smooth offset={100}>
               <span>ABOUT</span>
             </ScrollLink>
-            <ScrollLink to='work' smooth>
+            <ScrollLink to='work' smooth offset={500}>
               <span>WORK</span>
             </ScrollLink>
-            <ScrollLink to='socials' smooth>
+            <ScrollLink to='socials' smooth offset={100}>
               <span>SKILLS</span>
             </ScrollLink>
           </div>

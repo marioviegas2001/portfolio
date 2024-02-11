@@ -43,11 +43,9 @@ html.lenis {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+
   }
 
-  #about, #work, #socials, #contact{
-    scroll-margin-top: 4rem; /* Prevents scrolling to far down */
-  }
 
   /* NAVBAR */
   .navbar {

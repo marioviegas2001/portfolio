@@ -34,26 +34,27 @@ function Navbar() {
     };
   }, []);
 
+
   return (
     <div className='navbar'>
       <div className="left">
-        <ScrollLink to='main' smooth>
+        <ScrollLink to='main' smooth offset={-100}>
           <Image className='logo' src={Logo} alt="Website logo" />
         </ScrollLink>
       </div>
       <div className="center">
-        <ScrollLink to='about' smooth>
+        <ScrollLink to='about' smooth offset={100}>
           <span>ABOUT</span>
         </ScrollLink>
-        <ScrollLink to='work' smooth>
+        <ScrollLink to='work' smooth offset={500}>
           <span>WORK</span>
         </ScrollLink>
-        <ScrollLink to='socials' smooth>
+        <ScrollLink to='socials' smooth offset={100}>
           <span>SKILLS</span>
         </ScrollLink>
       </div>
       <div className="right">
-        <ScrollLink to='contact' smooth>
+        <ScrollLink to='contact' smooth offset={100}>
           <Image className='lets-talk' src={LetsTalk} alt="Contact Button" />
         </ScrollLink>
       </div>

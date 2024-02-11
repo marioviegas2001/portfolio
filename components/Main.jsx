@@ -8,7 +8,8 @@ import SplitType from 'split-type'
 
 function Main() {
   const heroImageRef = useRef(null);
-  const [isReady, setIsReady] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
+
 
   useEffect(() => {
     // GSAP Animation
@@ -18,15 +19,36 @@ function Main() {
     const chars2 = ourText2.chars
     const ourText3 = new SplitType('.hero3', { types: 'chars' })
     const chars3 = ourText3.chars
+    const heroImage = heroImageRef.current;
+    const heroTexts = document.querySelectorAll('.hero1, .hero2, .hero3');
 
     var tl = gsap.timeline();
     tl.fromTo(chars,{ y: 100, opacity: 0}, { delay: 0.5, y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out',})
     .fromTo(chars2,{ y: 100, opacity: 0}, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out',}, "<")
     .fromTo(chars3,{ y: 100, opacity: 0}, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out',}, "<")
-    .fromTo('.hero-image',{ y: 100, opacity: 0}, { y: 0, opacity: 1, duration: 1, ease: 'power4.out',}, "-=1.5");
+    .fromTo('.hero-image',{ y: 100, opacity: 0}, { y: 0, opacity: 1, duration: 1, ease: 'power4.out',}, "-=1.5")
+    .to('.hero-image-img', {
+      scrollTrigger: {
+        trigger: '.trigger-animation',
+        start: '-200px center',
+        end: '200px center',
+        scrub: true,
+        markers: false,
+      },
+      opacity: 0,
+      y: -100
+    }).to(heroTexts, {
+      scrollTrigger: {
+        trigger: '.trigger-animation',
+        start: '-200px center',
+        end: '200px center',
+        scrub: true,
+        markers: false
+      },
+      opacity: 0,
+    }, '<');
 
-    setIsReady(true);    
-
+    ScrollTrigger.refresh();
   }, []);
 
   useEffect(() => {
@@ -63,41 +85,6 @@ function Main() {
     };
   }, [heroImageRef]);
 
-  gsap.registerPlugin(ScrollTrigger);
-
-
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const heroImage = heroImageRef.current;
-      const heroTexts = document.querySelectorAll('.hero1, .hero2, .hero3');
-      var tl = gsap.timeline();
-      
-      tl.to('.hero-image-img', {
-        scrollTrigger: {
-          trigger: heroImage,
-          start: 'center center',
-          end: 'bottom center',
-          scrub: true,
-          markers: false,
-        },
-        opacity: 0,
-        y: -100
-      }).to(heroTexts, {
-        scrollTrigger: {
-          trigger: heroImage,
-          start: 'center center',
-          end: "bottom center",
-          scrub: true,
-          markers: false
-        },
-        opacity: 0,
-      }, '<');
-    }
-    
-
-  }, [isReady]); // Make sure to pass an empty dependency array to run this effect only once
-
   return (
     <div id='main' className='hero-container'>
       <div className="hero1"><p>It's me, Mario</p></div>
@@ -114,6 +101,7 @@ function Main() {
           }}
         />
       </div>
+      <div className='trigger-animation'></div>
     </div>
   );
 }
