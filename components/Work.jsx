@@ -4,13 +4,24 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitType from 'split-type';
 import Image from 'next/image';
 import placeholder from '../public/assets/placeholder.png';
+import santander from '../public/assets/santander.png';
+import converter from '../public/assets/converter.png';
+import Link from 'next/link';
 
-function WorkEntry({ name, imageSrc, reverse }) {
+
+function WorkEntry({ name, description ,imageSrc, reverse, link }) {
   return (
     <div className={`work-pic-container ${reverse ? 'reverse' : ''}`}>
-      <Image className='work-pic' src={imageSrc} alt={`Work ${name} image`} />
-      <div className='work-name'>
-        <span>{name}</span>
+      <Link href={link}>
+        <Image className='work-pic' src={imageSrc} alt={`Work ${name} image`} />
+      </Link>
+      <div className='work-description-container'>
+        <div className='work-name'>
+          <span>{name}</span>
+        </div>
+        <div className='description'>
+          <span>{description}</span>
+        </div>
       </div>
     </div>
   );
@@ -54,8 +65,8 @@ function Work() {
       <div className='work-container'>
         <span>WORK</span>
       </div>
-      <WorkEntry name="WORK 1" imageSrc={placeholder} reverse={false} />
-      <WorkEntry name="WORK 2" imageSrc={placeholder} reverse={true} />
+      <WorkEntry name="Santander features integration" description="Implementation of three features in the Santander app developed by the InsightX team aimed at assisting individuals approaching retirement." imageSrc={santander} reverse={false} link="https://www.figma.com/proto/CoLMgpsfo37p4i9Vlhl5T3/CCU?page-id=0%3A1&node-id=127-449&starting-point-node-id=127%3A449&mode=design&t=FQHQIxvgMtOZkp4x-1" />
+      <WorkEntry name="Cryptocurrencie Converter" description="A cryptocurrency converter able to do conversions between Fiat and Crypto in real-time." imageSrc={converter} reverse={true} link="https://github.com/marioviegas2001/CryptoConverter"/>
       {/* Add more WorkEntry components for additional works */}
     </div>
   );
