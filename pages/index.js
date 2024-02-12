@@ -8,9 +8,32 @@ import Work from '@/components/Work'
 import Socials from '@/components/Socials'
 import Contact from '@/components/Contact'
 import CustomCursor from '@/components/CustomCursor'
+import Preloader from '@/components/Preloader'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import gsap from 'gsap/dist/gsap'
 
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const preloader = document.querySelector('.preloader-page');
+
+    // Animation to fade out preloader and set loading to false
+    const tl = gsap.timeline({
+      onComplete: () => {
+        setLoading(false);
+      }
+    });
+
+    tl.to(preloader, { opacity: 0, duration: 1, delay: 3 });
+  }, []);
+
+  if (loading) {
+    return <Preloader />;
+  }
+
   return (
     <div className='parent-container'>
       <Head>

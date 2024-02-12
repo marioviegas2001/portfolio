@@ -3,7 +3,6 @@ import gsap from "gsap/dist/gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitType from 'split-type';
 import Image from 'next/image';
-import placeholder from '../public/assets/placeholder.png';
 import santander from '../public/assets/santander.png';
 import converter from '../public/assets/converter.png';
 import Link from 'next/link';
