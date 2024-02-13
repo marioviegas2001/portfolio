@@ -1459,4 +1459,25 @@ textarea.form-control {
   }
 }
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #0e0e0c;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0e0e0c;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
 }
