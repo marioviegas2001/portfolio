@@ -43,6 +43,7 @@ export default function Home() {
         <link rel="icon" href="/assets/Logo.png" />
       </Head>
       <CustomCursor />
+      <div className='bg'></div>
       <Navbar/>
       <section className='section1'><Main/></section>
       <section className='section2'><Quote/></section>
