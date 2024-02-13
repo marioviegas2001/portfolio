@@ -1296,7 +1296,58 @@ textarea.form-control {
   height: 40px;
 }
 
+@media (max-width: 499px) {
+  .contact-form-form {
+    justify-content: center;
+  }
 
+  .form {
+    max-width: 75%;
+  }
+  .contact-form-title-header {
+    font-size: 30px;
+  }
+
+  .contact-form-inner-info-row {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form-info-text {
+  display: flex;
+  justify-content: center;
+}
+}
+
+@media (min-width: 500px) and (max-width: 767px){
+  .contact-form-form {
+    justify-content: center;
+  }
+
+  .form {
+    max-width: 75%;
+  }
+  .contact-form-title-header {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-form-form {
+    justify-content: center;
+  }
+
+  .form {
+    max-width: 75%;
+  }
+
+  .contact-form-title-header {
+    font-size: 40px;
+  }
+}
+
+/* CURSOR */
 .cursor {
   pointer-events: none;
   position: fixed;
