@@ -503,7 +503,7 @@ html.lenis {
   }
 
   .description{
-    padding: 30px;
+    padding: 40px;
   }
 
   .description span{
@@ -515,6 +515,56 @@ html.lenis {
     flex-direction: row-reverse;
     margin-right: 5rem;
     margin-left: 0;
+  }
+
+  @media (max-width: 499px) {
+    .work-pic {
+      width: 90%;
+      height: auto;
+    }
+
+    .work-pic-container, .work-pic-container.reverse {
+      flex-direction: column;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .work-pic-container a, .work-pic-container.reverse a {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  @media (min-width: 500px) and (max-width: 767px){
+    .work-pic {
+      width: 93%;
+      height: auto;
+    }
+
+    .work-pic-container, .work-pic-container.reverse {
+      flex-direction: column;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .work-pic-container a, .work-pic-container.reverse a {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .work-pic {
+      width: 95%;
+      height: auto;
+    }
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1399px) {
+    .work-pic {
+      width: 98%;
+      height: auto;
+    }
   }
 
    /* SKILLS  */
