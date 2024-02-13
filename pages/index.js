@@ -27,7 +27,7 @@ export default function Home() {
       }
     });
 
-    tl.to(preloader, { opacity: 0, duration: 1, delay: 3 });
+    tl.to(preloader, { opacity: 0, duration: 1, delay: 4 });
   }, []);
 
   if (loading) {

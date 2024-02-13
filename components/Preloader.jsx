@@ -1,8 +1,30 @@
+// Preloader.js
+
 import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
 import logo from '../public/assets/LogoPreloader.png';
 import Image from 'next/image';
 
 function Preloader() {
+  useEffect(() => {
+    // Create a GSAP timeline
+    const tl = gsap.timeline();
+
+    // Select the text elements
+    const textElements = document.querySelectorAll('.preloader-title, .preloader-phrase, .year, .preloader-footer, .preloader-logo');
+
+    // Add fading in animation for text elements to the timeline
+    tl.to(textElements, { opacity: 1, duration: 2, stagger: 0.3 })
+    .to(".year", {
+      scale: 1000,
+      duration: 2,
+      ease: "power2.inOut",
+      onComplete: () => {
+        document.body.style.backgroundColor = '#0e0e0c';
+      }
+    });
+  }, []);
+
   return (
     <div className='preloader-page'>
       <div className='preloader-main-container'>

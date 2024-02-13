@@ -1268,7 +1268,7 @@ textarea.form-control {
 }
 
 .preloader-main-container {
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   align-content: center;
@@ -1284,15 +1284,18 @@ textarea.form-control {
   justify-content: center;
   padding-top: 2rem;
   flex-wrap: wrap;
+  position: absolute;
+  top: 0;
 }
 
 .preloader-title-container h2{
   text-transform: uppercase;
   font-family: var(--font-mono);
+  opacity: 0;
 }
 
-.preloader-logo-container {
-  margin-top: 5%;
+.preloader-logo {
+  opacity: 0;
 }
 
 .preloader-hero-container {
@@ -1301,16 +1304,20 @@ textarea.form-control {
   text-align: center;
   font-family: var(--font-header);
   text-transform: uppercase;
-  font-size: 6.5rem;
+  font-size: 8rem;
   font-weight: bold;
-  margin-top: 3%;
   padding: 2rem;
   letter-spacing: 10px;
+}
+
+.preloader-phrase{
+  opacity: 0;
 }
 
 .year {
   font-size: 2rem;
   letter-spacing: 0;
+  opacity: 0;
 }
 
 .preloader-footer-container{
@@ -1319,5 +1326,36 @@ textarea.form-control {
   bottom: 10px;
 }
 
+.preloader-footer{
+  opacity: 0;
+}
+
+.dot{
+  position: absolute;
+}
+
+@media (max-width: 499px) {
+  .preloader-hero-container {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 767px){
+  .preloader-hero-container {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .preloader-hero-container {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .preloader-hero-container {
+    font-size: 6.5rem;
+  }
+}
 
 }
