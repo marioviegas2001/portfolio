@@ -41,7 +41,7 @@ function Quote() {
     // Add a scroll trigger to play the tlChars animation when the quote section is in view
     ScrollTrigger.create({
       trigger: '.quote',
-      start: 'top center',
+      start: '-300px center',
       end: 'bottom center',
       onEnter: () => {
         tlChars.play(); // Play the tlChars animation when the quote section is in view

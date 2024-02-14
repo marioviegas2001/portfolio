@@ -16,40 +16,64 @@ function About() {
       const text = new SplitType('.who-am-i', { types: 'words' });
       const textWords = text.words;
 
-      var tl = gsap.timeline();
+      var tlChars = gsap.timeline({ paused: true });
+      var tlInfo = gsap.timeline({ paused: true });
+      var tlPhoto = gsap.timeline({ paused: true });
 
-  
-      tl.from(aboutmeChars, {
-        scrollTrigger: {
-          trigger: '.section1-container',
-          start: '-200px center',
-          end: 'bottom center',
-          scrub: true,
-          markers: false,
-          toggleActions: "play none none none"
-        },
+
+      tlChars.from(aboutmeChars, {
         opacity: 0,
         y: 50,
+        stagger:0.05,
+        ease: 'power3.out',
+        onComplete: () => {
+          tlChars.kill();
+        }
+      });
+      ScrollTrigger.create({
+        trigger: '.section1-container',
+        start: '-200px center',
+        end: 'bottom center',
+        onEnter: () => {
+          tlChars.play(); 
+        },
+        once: true 
+      });
+
+      tlInfo.from(textWords, {
+        opacity: 0,
         duration: 1,
         ease: 'power3.out',
-      }).from(textWords, {
-        scrollTrigger: {
-          trigger: '.who-am-i',
-          start: 'top center',
-          end: 'center center',
-          scrub: true,
-          markers: false
+        onComplete: () => {
+          tlInfo.kill();
+        }
+      });
+      ScrollTrigger.create({
+        trigger: '.section1-container',
+        start: 'top center',
+        end: 'center bottom',
+        onEnter: () => {
+          tlInfo.play(); 
         },
-        opacity: 0,
-      }).to('.photo', {
-        scrollTrigger: {
-          trigger: '.photo',
-          start: 'top center',
-          end: 'center bottom',
-          scrub: true,
-          markers: false //to method used instead of a from because some conflict with css would't make from method work
-        },
+        once: true 
+      });
+
+      tlPhoto.to('.photo', {
         opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        onComplete: () => {
+          tlPhoto.kill();
+        }
+      });
+      ScrollTrigger.create({
+        trigger: '.section1-container',
+        start: 'top center',
+        end: 'center bottom',
+        onEnter: () => {
+          tlPhoto.play(); 
+        },
+        once: true 
       });
     }
   }, []);
