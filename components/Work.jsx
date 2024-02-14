@@ -34,28 +34,45 @@ function Work() {
       const work = new SplitType('.work-container span', { types: 'chars' });
       const workChars = work.chars;
 
-      var tl = gsap.timeline();
+      var tlWorkChars = gsap.timeline({ paused: true });
+      var tlWorkPic = gsap.timeline({ paused: true });
 
-  
-      tl.from(workChars, {
-        scrollTrigger: {
-          trigger: '.work-container',
-          start: 'top center',
-          end: 'bottom center',
-          scrub: true,
-          markers: false
-        },
+
+      tlWorkChars.from(workChars, {
         opacity: 0,
-        y: 50
-      }).to(".work-pic-container", {
-        scrollTrigger: {
-          trigger: '.work-pic-container',
-          start: 'top center',
-          end: 'center center',
-          scrub: true,
-          markers: false
+        y: 50,
+        stagger:0.05,
+        ease: 'power3.out',
+        onComplete: () => {
+          tlWorkChars.kill();
+        }
+      });
+      ScrollTrigger.create({
+        trigger: '.work-container',
+        start: 'top center',
+        end: 'center center',
+        onEnter: () => {
+          tlWorkChars.play(); 
         },
+        once: true 
+      });
+      
+      tlWorkPic.to(".work-pic-container", {
         opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        onComplete: () => {
+          tlWorkPic.kill();
+        }
+      });
+      ScrollTrigger.create({
+        trigger: '.work-pic-container',
+        start: 'top center',
+        end: 'center center',
+        onEnter: () => {
+          tlWorkPic.play(); 
+        },
+        once: true 
       });
     }
   }, []);

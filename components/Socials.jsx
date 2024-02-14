@@ -28,20 +28,43 @@ function Socials() {
       const skills = new SplitType('.socials-container', { types: 'chars' });
       const skillsChars = skills.chars;
 
-      var tl = gsap.timeline();
+      var tlSkillChars = gsap.timeline({ paused: true });
 
-  
-      tl.from(skillsChars, {
-        scrollTrigger: {
-          trigger: '.socials-container',
-          start: 'top center',
-          end: 'bottom center',
-          scrub: true,
-          markers: false
-        },
+
+      tlSkillChars.from(skillsChars, {
         opacity: 0,
-        y: 50
+        y: 50,
+        stagger:0.05,
+        ease: 'power3.out',
+        onComplete: () => {
+          tlSkillChars.kill();
+        }
       });
+      ScrollTrigger.create({
+        trigger: '.socials-container',
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => {
+          tlSkillChars.play(); 
+        },
+        once: true 
+      });
+
+      const cards = document.querySelectorAll('.custom-box');
+
+      gsap.from(cards, {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: '.socials-container', 
+          start: 'top center+=100',
+          end: 'bottom center',
+          toggleActions: 'play none none none',
+        }
+      });
+      
     }
   }, []);
   return (
