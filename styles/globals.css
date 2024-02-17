@@ -1360,6 +1360,8 @@ textarea.form-control {
   z-index: 2000;
 }
 
+/* PRELOADER */
+
 .preloader-page {
   position: relative;
   z-index: 3000;
@@ -1433,6 +1435,16 @@ textarea.form-control {
 
 .dot{
   position: absolute;
+}
+
+.black-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 0%;
+  background-color: #0e0e0c;
+  z-index: 9999; /* Ensure the black screen is above other content */
 }
 
 @media (max-width: 499px) {

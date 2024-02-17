@@ -1,5 +1,3 @@
-// Preloader.js
-
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import logo from '../public/assets/LogoPreloader.png';
@@ -15,14 +13,14 @@ function Preloader() {
 
     // Add fading in animation for text elements to the timeline
     tl.to(textElements, { opacity: 1, duration: 2, stagger: 0.3 })
-    .to(".year", {
-      scale: 1000,
-      duration: 2,
-      ease: "power2.inOut",
-      onComplete: () => {
-        document.body.style.backgroundColor = '#0e0e0c';
-      }
-    });
+      .to('.black-screen', {
+        height: "100%",
+        duration: 2,
+        ease: "power2.inOut",
+        onComplete: () => {
+          document.body.style.backgroundColor = '#0e0e0c';
+        }
+      });
   }, []);
 
   return (
@@ -42,6 +40,7 @@ function Preloader() {
           <span className='preloader-footer'>&copy; 2024 Copyright - Mario Viegas</span>
         </div>
       </div>
+      <div className='black-screen'></div>
     </div>
   );
 }
