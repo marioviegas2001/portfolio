@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Footer from './Footer'
-import gsap from "gsap/dist/gsap";
+import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Link from 'next/link';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Icon } from "@iconify/react";
-import gsap from "gsap/dist/gsap";
+import gsap from "gsap";
 import Link from 'next/link';
 import Head from 'next/head';
 import CustomCursor from '@/components/CustomCursor';

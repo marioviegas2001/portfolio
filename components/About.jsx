@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import React, { useEffect } from 'react';
-import gsap from "gsap/dist/gsap";
+import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitType from 'split-type';
-import aboutPhoto from '../public/assets/aboutPhoto.png';
+import aboutPhoto from '../public/assets/AboutPhoto.png';
 
 
 function About() {
