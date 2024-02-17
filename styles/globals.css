@@ -40,7 +40,6 @@ html.lenis {
 
 
 
-@media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
 
@@ -1524,4 +1523,4 @@ textarea.form-control {
     90% { transform: translate(10%,5%) }
     100% { transform: translate(5%,0) }
 }
-}
+
