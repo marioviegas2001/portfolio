@@ -9,9 +9,8 @@ import Socials from '@/components/Socials'
 import Contact from '@/components/Contact'
 import CustomCursor from '@/components/CustomCursor'
 import Preloader from '@/components/Preloader'
-import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import gsap from 'gsap/dist/gsap'
+import gsap from 'gsap'
 
 
 export default function Home() {
