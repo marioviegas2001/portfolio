@@ -34,13 +34,13 @@ function Footer() {
             <ScrollLink to='main' smooth offset={-100}>
               <span>HOME</span>
             </ScrollLink>
-            <ScrollLink to='about' smooth offset={100}>
+            <ScrollLink to='about' smooth>
               <span>ABOUT</span>
             </ScrollLink>
-            <ScrollLink to='work' smooth offset={500}>
+            <ScrollLink to='work' smooth offset={200}>
               <span>WORK</span>
             </ScrollLink>
-            <ScrollLink to='socials' smooth offset={100}>
+            <ScrollLink to='socials' smooth>
               <span>SKILLS</span>
             </ScrollLink>
           </div>
