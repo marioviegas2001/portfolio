@@ -7,11 +7,13 @@ import SplitType from 'split-type'
 
 function Main() {
   const heroImageRef = useRef(null);
-  const isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768; // Adjust breakpoint as needed
   const [scrollTriggerEnabled, setScrollTriggerEnabled] = useState(!isMobile);
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     // GSAP Animation
     const ourText = new SplitType('.hero1', { types: 'chars' })
     const chars = ourText.chars
@@ -57,6 +59,7 @@ function Main() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (isMobile) return; // Don't execute for mobile devices
+      if (typeof window === "undefined") return;
 
       const { clientX: mouseX, clientY: mouseY } = e;
       const { current: heroImage } = heroImageRef;
@@ -75,6 +78,7 @@ function Main() {
 
     const handleMouseLeave = () => {
       if (isMobile) return; // Don't execute for mobile devices
+      if (typeof window === "undefined") return;
 
       const { current: heroImage } = heroImageRef;
 
@@ -83,13 +87,13 @@ function Main() {
       }
     };
 
-    if (!isMobile) {
+    if (!isMobile && typeof window !== "undefined") {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseleave', handleMouseLeave);
     }
 
     return () => {
-      if (!isMobile) {
+      if (!isMobile && typeof window !== "undefined") {
         document.removeEventListener('mousemove', handleMouseMove);
         document.removeEventListener('mouseleave', handleMouseLeave);
       }

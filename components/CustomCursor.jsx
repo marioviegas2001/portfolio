@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 
 const CustomCursor = () => {
   useEffect(() => {
+    if (typeof window === "undefined") return; // Check if window is defined
+
     const textElements = document.querySelectorAll('span, a, svg, p, h1, h2, h3, h4, h5, h6, li, button, .word, .char');
     const cursor = document.querySelector('.cursor');
 
@@ -36,7 +38,7 @@ const CustomCursor = () => {
     };
   }, []);
 
-  if (window.innerWidth <= 768) return null; // Hide the cursor on mobile devices
+  if (typeof window === "undefined" || window.innerWidth <= 768) return null; // Hide the cursor on mobile devices
 
   return (
     <div className="cursor"></div>
