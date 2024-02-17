@@ -14,7 +14,7 @@ function Preloader() {
     // Add fading in animation for text elements to the timeline
     tl.to(textElements, { opacity: 1, duration: 2, stagger: 0.3 })
       .to('.black-screen', {
-        height: "100%",
+        width: "100%",
         duration: 2,
         ease: "power2.inOut",
         onComplete: () => {

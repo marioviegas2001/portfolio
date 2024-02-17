@@ -723,7 +723,7 @@ html.lenis {
   
   .contact-me {
     font-family: var(--font-header);
-    font-size: 200px;
+    font-size: 170px;
     font-weight: bold;
     text-shadow: 5px 5px 5px #7a7a7a;
     text-align: center;
@@ -924,7 +924,7 @@ html.lenis {
 
 @media (min-width: 1400px) and (max-width: 1700px) {
   .copyright span {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -1440,9 +1440,9 @@ textarea.form-control {
 .black-screen {
   position: fixed;
   top: 0;
-  left: 0;
-  width:100%;
-  height: 0%;
+  right: 0;
+  width: 0%;
+  height: 100%;
   background-color: #0e0e0c;
   z-index: 9999; /* Ensure the black screen is above other content */
 }
