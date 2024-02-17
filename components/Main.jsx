@@ -5,11 +5,11 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SplitType from 'split-type'
 
-
 function Main() {
   const heroImageRef = useRef(null);
+  const isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+  const [scrollTriggerEnabled, setScrollTriggerEnabled] = useState(!isMobile);
   gsap.registerPlugin(ScrollTrigger);
-
 
   useEffect(() => {
     // GSAP Animation
@@ -27,32 +27,37 @@ function Main() {
     .fromTo(chars2,{ y: 100, opacity: 0}, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out',}, "<")
     .fromTo(chars3,{ y: 100, opacity: 0}, { y: 0, opacity: 1, stagger: 0.05, duration: 2, ease: 'power4.out',}, "<")
     .fromTo('.hero-image',{ y: 100, opacity: 0}, { y: 0, opacity: 1, duration: 1, ease: 'power4.out',}, "-=1.5")
-    .to('.hero-image-img', {
-      scrollTrigger: {
-        trigger: '.trigger-animation',
-        start: '-200px center',
-        end: '200px center',
-        scrub: true,
-        markers: false,
-      },
-      opacity: 0,
-      y: -100
-    }).to(heroTexts, {
-      scrollTrigger: {
-        trigger: '.trigger-animation',
-        start: '-200px center',
-        end: '200px center',
-        scrub: true,
-        markers: false
-      },
-      opacity: 0,
-    }, '<');
+    
+    if (scrollTriggerEnabled) {
+      tl.to('.hero-image-img', {
+        scrollTrigger: {
+          trigger: '.trigger-animation',
+          start: '-200px center',
+          end: '200px center',
+          scrub: true,
+          markers: false,
+        },
+        opacity: 0,
+        y: -100
+      }).to(heroTexts, {
+        scrollTrigger: {
+          trigger: '.trigger-animation',
+          start: '-200px center',
+          end: '200px center',
+          scrub: true,
+          markers: false
+        },
+        opacity: 0,
+      }, '<');
+    }
 
     ScrollTrigger.refresh();
-  }, []);
+  }, [scrollTriggerEnabled]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
+      if (isMobile) return; // Don't execute for mobile devices
+
       const { clientX: mouseX, clientY: mouseY } = e;
       const { current: heroImage } = heroImageRef;
 
@@ -69,6 +74,8 @@ function Main() {
     };
 
     const handleMouseLeave = () => {
+      if (isMobile) return; // Don't execute for mobile devices
+
       const { current: heroImage } = heroImageRef;
 
       if (heroImage) {
@@ -76,14 +83,18 @@ function Main() {
       }
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseleave', handleMouseLeave);
+    if (!isMobile) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseleave', handleMouseLeave);
+    }
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      if (!isMobile) {
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseleave', handleMouseLeave);
+      }
     };
-  }, [heroImageRef]);
+  }, [heroImageRef, isMobile]);
 
   return (
     <div id='main' className='hero-container'>

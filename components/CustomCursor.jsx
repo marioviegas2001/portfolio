@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const CustomCursor = () => {
   useEffect(() => {
@@ -7,9 +7,9 @@ const CustomCursor = () => {
 
     if (!cursor) return; // Check if cursor exists before proceeding
     const animateCursor = (e) => {
-          const { clientX: x, clientY: y } = e;
-          cursor.style.left = x + 'px';
-          cursor.style.top = y + 'px';
+      const { clientX: x, clientY: y } = e;
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
     };
 
     const scaleCursor = () => {
@@ -35,6 +35,8 @@ const CustomCursor = () => {
       window.removeEventListener('mousemove', animateCursor);
     };
   }, []);
+
+  if (window.innerWidth <= 768) return null; // Hide the cursor on mobile devices
 
   return (
     <div className="cursor"></div>
